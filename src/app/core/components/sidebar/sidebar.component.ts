@@ -29,16 +29,19 @@ export class SidebarComponent implements OnInit {
   page: WritableSignal<string> = signal('');
 
   ngOnInit() {
-    const params: string | null = localStorage.getItem('paramsFilmHub');
+    if (typeof localStorage !== 'undefined') {
+      const params: string | null = localStorage.getItem('paramsFilmHub');
 
-    if (!params) {
-      localStorage.setItem('paramsFilmHub', JSON.stringify(newParams));
+      if (!params) {
+        localStorage.setItem('paramsFilmHub', JSON.stringify(newParams));
+      }
     }
 
     this.subscription = this.pagePathsService.currentPage$.subscribe((page: string) => {
       this.page.set(page);
     });
   }
+
 
   protected readonly currentPage = currentPage;
 }
