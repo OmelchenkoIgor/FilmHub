@@ -24,9 +24,13 @@
 
     .search {
       position: sticky;
-      top: 80px;
+      top: 60px;
 
       z-index: 1;
+    }
+
+    .content {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
   }
 }
@@ -40,7 +44,7 @@
     }
 
     .content {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     }
   }
 }
