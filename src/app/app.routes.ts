@@ -7,7 +7,7 @@ import {MovieDetailsComponent} from './features/pages/movie-details/movie-detail
 import {TvDetailsComponent} from './features/pages/tv-details/tv-details.component';
 
 export const routes: Routes = [
-  {path: '', redirectTo: 'movie', pathMatch: 'full'},
+  {path: '', component: MovieComponent},
   {path: 'movie', component: MovieComponent},
   {path: 'movie/:id', component: MovieDetailsComponent},
   {path: 'tv', component: TvComponent},
