@@ -1,0 +1,147 @@
+@import "../../../../styles.scss";
+
+.sidebar {
+  height: 90vh;
+
+  position: sticky;
+  top: 35px;
+
+  margin: 0 10px;
+  padding: 15px 0;
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: $color-background;
+
+  z-index: 1;
+
+  .item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__logo {
+    flex: 1;
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  &__icons {
+    flex: 4;
+
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start !important;
+
+    gap: 20px;
+
+    img {
+      cursor: pointer;
+      transition: filter 0.4s ease;
+    }
+
+    img.active,
+    img:hover {
+      filter: brightness(10) !important;
+    }
+  }
+
+  &__picture {
+    flex: 1;
+
+    align-items: flex-end;
+    justify-content: center !important;
+
+    .picture-container {
+      width: 35px;
+      height: 35px;
+
+      border-radius: 50%;
+      border: 2px solid $color-white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      ::ng-deep svg {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    min-width: 100%;
+    height: 80px;
+
+    position: fixed;
+    top: 0;
+
+    margin: 0;
+    padding: 20px;
+    border-radius: 0;
+
+    flex-direction: row;
+
+    &__logo {
+      justify-content: flex-start !important;
+    }
+
+    &__icons {
+      flex-direction: row;
+      justify-content: center !important;
+    }
+
+    &__picture {
+      justify-content: flex-end !important;
+    }
+  }
+}
+
+@media screen and (max-width: 480px){
+  .sidebar {
+    height: 60px;
+
+    &__logo {
+      img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    &__icons {
+      gap: 15px;
+
+      img {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    &__picture {
+      .picture-container {
+        width: 30px;
+        height: 30px;
+
+        ::ng-deep svg {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

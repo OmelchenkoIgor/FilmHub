@@ -1,0 +1,14 @@
+<div class="search">
+  <nz-input-group [nzSuffix]="suffixIconSearch">
+    <input
+      type="text"
+      nz-input
+      [(ngModel)]="search"
+      (input)="onSearch()"
+      [placeholder]="'Пошук'"
+    />
+  </nz-input-group>
+  <ng-template #suffixIconSearch>
+    <span nz-icon nzType="search"></span>
+  </ng-template>
+</div>

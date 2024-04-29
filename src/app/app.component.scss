@@ -1,0 +1,14 @@
+.wrapper {
+  min-height: 100%;
+
+  display: grid;
+  grid-template-columns: minmax(5rem, 5%) 1fr;
+}
+
+@media screen and (max-width: 768px) {
+
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(5rem, 5%) 1fr;
+  }
+}

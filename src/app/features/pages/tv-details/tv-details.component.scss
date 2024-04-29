@@ -1,0 +1,202 @@
+@import "../../../../styles.scss";
+
+.tv {
+  padding: 35px 10px 0 5px;
+
+  .tv-info {
+    display: flex;
+    padding-bottom: 20px;
+
+    border-bottom: 2px $color-accent solid;
+
+    &-poster {
+      max-width: 250px;
+
+      img {
+        width: 100%;
+
+        border-radius: 15px;
+      }
+    }
+
+    &-text {
+      padding-left: 10px;
+
+      h1 {
+        color: $color-white;
+      }
+
+      .item {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+
+        p {
+          margin: 0;
+        }
+
+        .key {
+          font-size: 20px;
+        }
+
+        .value {
+          font-size: 20px;
+          font-weight: 100;
+
+          color: $color-accent;
+        }
+      }
+
+      .option {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+
+        margin-top: 10px;
+
+        button {
+          min-width: 150px;
+          background: none;
+          border: 1px dotted $color-accent;
+          border-radius: 5px;
+
+          cursor: pointer;
+          color: $color-white;
+          transition: background-color 0.4s, color 0.4s;
+        }
+
+        button:active,
+        button.saved {
+          border: none;
+
+          color: $color-background;
+          background-color: $color-red;
+        }
+      }
+    }
+  }
+
+  .tv-description {
+    p {
+      font-size: 24px;
+    }
+  }
+
+  .tv-video {
+    display: flex;
+    justify-content: center;
+
+    iframe {
+      width: 70%;
+
+      border-top: 10px solid $color-background;
+      border-bottom: 10px solid $color-background;
+      border-left: 2px solid $color-background;
+      border-right: 2px solid $color-background;
+      border-radius: 10px;
+    }
+  }
+
+  .tv-notVideo {
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      color: $color-accent;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tv {
+    padding: 25px 20px 0;
+
+    .tv-info {
+      &-poster {
+        max-width: 200px;
+        max-height: 300px;
+      }
+
+      &-text {
+        h1 {
+          font-size: 24px;
+        }
+
+        .item {
+          .key {
+            font-size: 18px;
+          }
+
+          .value {
+            font-size: 18px;
+          }
+        }
+
+        .option {
+          button {
+            min-width: 100px;
+          }
+        }
+      }
+    }
+
+    .tv-description {
+      p {
+        font-size: 20px;
+      }
+    }
+
+    .tv-video {
+      display: flex;
+      justify-content: center;
+
+      iframe {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tv {
+    padding: 0 15px 0;
+
+    .tv-info {
+      &-poster {
+        max-width: 150px;
+        max-height: 245px;
+      }
+
+      &-text {
+        h1 {
+          font-size: 18px;
+        }
+
+        .item {
+          .key {
+            font-size: 14px;
+          }
+
+          .value {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .option {
+        button {
+          min-width: 75px;
+        }
+      }
+    }
+
+    .tv-description {
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+}

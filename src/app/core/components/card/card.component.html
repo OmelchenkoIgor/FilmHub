@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card__poster">
+    <img
+      (click)="goMovie(movie()['id'], url())"
+      [src]="IMG_URL+ movie()['poster_path']"
+      [alt]="movie().title"
+    >
+  </div>
+  <div class="card__title">
+    <p>{{ movie().title ? (movie().title | truncate: 24) : (movie().name | truncate: 24) }}</p>
+  </div>
+</div>

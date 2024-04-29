@@ -1,0 +1,61 @@
+@import "../../../../styles.scss";
+
+.search {
+  nz-input-group {
+    padding: 45px 0 20px;
+    gap: 28px;
+    border: none;
+    border-radius: 0;
+    background-color: $color-secondary;
+
+    input {
+      font-size: 24px;
+      border-radius: 0;
+      color: $color-white;
+      background-color: $color-secondary;
+
+      &:focus {
+        box-shadow: 0 2px $color-accent !important;
+      }
+    }
+
+    span {
+      font-size: 25px;
+      color: $color-white;
+    }
+  }
+
+  .ant-input {
+    caret-color: $color-red;
+  }
+
+  .ant-input-affix-wrapper {
+    flex-direction: row-reverse;
+
+    &-focused {
+      box-shadow: none !important;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search {
+    nz-input-group {
+      padding: 5px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 480px){
+  .search {
+    nz-input-group {
+      input {
+        font-size: 16px;
+      }
+
+      span {
+        font-size: 18px;
+      }
+    }
+  }
+}

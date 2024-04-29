@@ -1,0 +1,79 @@
+@if (tv()) {
+  <div class="tv">
+    <div class="tv-info">
+      <div class="tv-info-poster">
+        <img
+          [src]="IMG_URL+ tv()['poster_path']"
+          [alt]="tv()['name']"
+        >
+      </div>
+
+      <div class="tv-info-text">
+        <h1>{{ tv()['name'] }}</h1>
+
+        <div class="item">
+          <p class="key">Рік: {{ convertDate(tv()['last_air_date']) }}</p>
+          <p class="value">({{ tv()['status'] }})</p>
+        </div>
+
+        <div class="item">
+          <p class="key">Жанр:</p>
+          <p class="value">{{ getGenre(tv()['genres']) }}</p>
+        </div>
+
+        <div class="item">
+          <p class="key">Країна:</p>
+          <p class="value">{{ getGenre(tv()['production_countries']) }}</p>
+        </div>
+
+        <div class="item">
+          <p class="key">Сезонів:</p>
+          <p class="value">{{ tv()['number_of_seasons'] }}</p>
+        </div>
+
+        <div class="item">
+          <p class="key">Епізодів:</p>
+          <p class="value">{{ tv()['number_of_episodes'] }}</p>
+        </div>
+
+        <div class="option">
+          <button
+            [class.saved]="checking(this.tvId(), 'tv')"
+            (click)="save(this.tvId(), 'tv')"
+          >
+            Зберегти
+          </button>
+
+          <button
+            [class.saved]="checking(this.tvId(), 'revised')"
+            (click)="save(this.tvId(), 'revised', 'tv')"
+          >
+            Переглянуто
+          </button>
+
+          <button
+            [class.saved]="checking(this.tvId(), 'favorite')"
+            (click)="save(this.tvId(), 'favorite', 'tv')"
+          >
+            Улюблене
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tv-description">
+      <p>{{ tv()['overview'] }}</p>
+    </div>
+
+    @if (tvVideo()) {
+      <div class="tv-video">
+        <iframe width="560" height="500" [src]="tvVideo()" allowfullscreen></iframe>
+      </div>
+    } @else {
+      <div class="tv-notVideo">
+        <p>На жаль, цей серіал не надав відео для показу(</p>
+      </div>
+    }
+  </div>
+}
+

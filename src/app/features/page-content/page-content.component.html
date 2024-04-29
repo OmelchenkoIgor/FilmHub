@@ -1,0 +1,16 @@
+<div class="page-content">
+  <div class="search">
+    <app-search
+      [category]="category()"
+      (page)="currentPage.set($event)"
+      (searchContent)="searchContent.set($event)"
+    ></app-search>
+  </div>
+
+  <div class="content">
+    @for (movie of moviesList(); track movie) {
+      <app-card [movie]="movie"></app-card>
+    }
+  </div>
+</div>
+

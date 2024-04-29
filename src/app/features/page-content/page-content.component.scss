@@ -1,0 +1,46 @@
+@import "../../../styles.scss";
+
+.page-content {
+  padding: 0 10px 0 5px;
+
+  .search {
+    position: sticky;
+    top: 0;
+
+    z-index: 1;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    padding-top: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-content {
+    padding: 0 10px 10px 10px;
+
+    .search {
+      position: sticky;
+      top: 80px;
+
+      z-index: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    padding: 0 10px 10px 10px;
+
+    .search {
+      top: 60px;
+    }
+
+    .content {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+  }
+}

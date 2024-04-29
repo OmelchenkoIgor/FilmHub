@@ -1,0 +1,69 @@
+@if (movie()) {
+  <div class="movie">
+    <div class="movie-info">
+      <div class="movie-info-poster">
+        <img
+          [src]="IMG_URL+ movie()['poster_path']"
+          [alt]="movie()['title']"
+        >
+      </div>
+
+      <div class="movie-info-text">
+        <h1>{{ movie()['title'] }}</h1>
+
+        <div class="item">
+          <p class="key">Рік: {{ convertDate(movie()['release_date']) }}</p>
+          <p class="value">({{ movie()['status'] }})</p>
+        </div>
+
+        <div class="item">
+          <p class="key">Жанр:</p>
+          <p class="value">{{ getGenre(movie()['genres']) }}</p>
+        </div>
+
+        <div class="item">
+          <p class="key">Країна:</p>
+          <p class="value">{{ getGenre(movie()['production_countries']) }}</p>
+        </div>
+
+        <div class="option">
+          <button
+            [class.saved]="checking(this.movieId(), 'movie')"
+            (click)="save(this.movieId(), 'movie')"
+          >
+            Зберегти
+          </button>
+
+          <button
+            [class.saved]="checking(this.movieId(), 'revised')"
+            (click)="save(this.movieId(), 'revised', 'movie')"
+          >
+            Переглянуто
+          </button>
+
+          <button
+            [class.saved]="checking(this.movieId(), 'favorite')"
+            (click)="save(this.movieId(), 'favorite', 'movie')"
+          >
+            Улюблене
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-description">
+      <p>{{ movie()['overview'] }}</p>
+    </div>
+
+    @if (movieVideo()) {
+      <div class="movie-video">
+        <iframe width="560" height="500" [src]="movieVideo()" allowfullscreen></iframe>
+      </div>
+    } @else {
+      <div class="movie-notVideo">
+        <p>На жаль, цей фільм не надав відео для показу(</p>
+      </div>
+    }
+  </div>
+}
+

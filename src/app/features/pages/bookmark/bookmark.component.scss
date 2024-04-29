@@ -1,0 +1,50 @@
+@import "../../../../styles.scss";
+
+.bookmark {
+  padding: 35px 10px 0 5px;
+
+  .movie,
+  .tv,
+  .revised,
+  .favorite {
+    h1 {
+      color: $color-white;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+
+      padding-top: 10px;
+    }
+  }
+
+  .tv,
+  .revised,
+  .favorite {
+    margin-top: 20px;
+    border-top: 2px $color-accent solid;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bookmark {
+    padding: 25px 20px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bookmark {
+    padding: 0 15px 0;
+
+    .movie,
+    .tv,
+    .revised,
+    .favorite {
+      .content {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<div class="sidebar">
+  <div class="sidebar__logo item">
+    <img
+      routerLink="movie"
+      src="../../../../assets/icons/Logo.svg" alt="FilmHab" height="30" width="30"
+    >
+  </div>
+
+  <div class="sidebar__icons item">
+    <img
+      routerLink="movie"
+      [ngStyle]="{'filter': currentPage('/movie', page()) ? 'brightness(10)' : 'none'}"
+      src="../../../../assets/icons/Home.svg" alt="movie" height="20" width="20"
+    >
+
+    <img
+      routerLink="tv"
+      [ngStyle]="{'filter': currentPage('/tv', page()) ? 'brightness(10)' : 'none'}"
+      src="../../../../assets/icons/TV.svg" alt="tv" height="20" width="20"
+    >
+
+    <img
+      routerLink="bookmark"
+      [ngStyle]="{'filter': currentPage('/bookmark', page()) ? 'brightness(10)' : 'none'}"
+      src="../../../../assets/icons/Bookmark.svg" alt="bookmark" height="20" width="20"
+    >
+  </div>
+
+  <div class="sidebar__picture item">
+    <div class="picture-container">
+      <span nz-icon nzType="user" nzTheme="outline"></span>
+    </div>
+  </div>
+</div>

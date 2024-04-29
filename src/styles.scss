@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+$color-red: #FC4747;
+$color-secondary: #10141E;
+$color-accent: #5A698F;
+$color-background: #161D2F;
+$color-white: #FFFFFF;
+
+body, html {
+  margin: 0;
+  padding: 0;
+
+  color: $color-white;
+  background-color: $color-secondary;
+}

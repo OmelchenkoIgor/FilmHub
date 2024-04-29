@@ -1,0 +1,45 @@
+<div class="bookmark">
+  @if (moviesList.length) {
+    <div class="movie">
+      <h1>Фільми</h1>
+      <div class="content">
+        @for (movie of moviesList; track movie) {
+          <app-card [movie]="movie"></app-card>
+        }
+      </div>
+    </div>
+  }
+
+  @if (tvList.length) {
+    <div class="tv">
+      <h1>Серіали</h1>
+      <div class="content">
+        @for (movie of tvList; track movie) {
+          <app-card [movie]="movie"></app-card>
+        }
+      </div>
+    </div>
+  }
+
+  @if (revisedList.length) {
+    <div class="revised">
+      <h1>Переглянуті</h1>
+      <div class="content">
+        @for (movie of revisedList; track movie) {
+          <app-card [movie]="movie"></app-card>
+        }
+      </div>
+    </div>
+  }
+
+  @if (favoriteList.length) {
+    <div class="favorite">
+      <h1>Улюблені</h1>
+      <div class="content">
+        @for (movie of favoriteList; track movie) {
+          <app-card [movie]="movie"></app-card>
+        }
+      </div>
+    </div>
+  }
+</div>
